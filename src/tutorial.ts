@@ -1,34 +1,19 @@
-let awesomeName: string = 'shakeAndBake';
-awesomeName = 'something';
-awesomeName = awesomeName.toUpperCase();
+const books = [
+   '1984',
+   'Brave New World',
+   'Angel',
+   'Fahrenheit 451',
+   'The Martian',
+];
 
-console.log(awesomeName);
+let foundBook: string | undefined ;
 
-let amount: number = 10;
-amount = amount + 10;
+for (let book of books) {
+   if (book === '1984') {
+      foundBook = book;
+      foundBook = foundBook.toUpperCase();
+      break;
+   }
+}
 
-console.log(amount);
-
-let isAwesome: boolean = true;
-isAwesome = false;
-
-//1.
-const stringVar: string = 'hello';
-const lowered = stringVar.toLowerCase();
-console.log(lowered);
-
-//2
-
-const numberVar: number = 10;
-const calculated = numberVar + 10;
-console.log(calculated);
-
-//3
-
-const booleanVar: boolean = true;
-const logic = booleanVar ? 'Amd' : 'Intel';
-
-console.log(logic);
-
-let xyz: 10 | 12 | 'hello' | string = 'helloo';
-console.log(xyz);
+console.log(foundBook?.length);
