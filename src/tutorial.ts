@@ -1,11 +1,11 @@
-function calculateDiscount(price: number): number {
-   const hasDiscount = true;
-   if (hasDiscount) {
-      return 9;
-   }
-   return price * 0.9;
-}
+const array: string[] = ['shohan', 'rakib', 'emon', 'tanver'];
 
-const finalPrice = calculateDiscount(200);
+const validator = function (input: string[]): boolean {
+   const result: string | undefined = input.find((item) => item === 'shohan');
+   const output: boolean = result ? true : false;
+   return output;
+};
 
-console.log(finalPrice);
+console.log(validator(array));
+git config --global user.name "shohan11d"
+git config --global user.email "shohan11d@gmail.com"
