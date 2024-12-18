@@ -7,5 +7,3 @@ const validator = function (input: string[]): boolean {
 };
 
 console.log(validator(array));
-git config --global user.name "shohan11d"
-git config --global user.email "shohan11d@gmail.com"
