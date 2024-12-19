@@ -1,28 +1,30 @@
-// const processUnit = function (unit: string | number) {
-//       unit = unit * 2;
-//       console.log(`Number * 2 = ${unit}`);
-//    } else console.log(`Sring: ${unit}`);
-// };
-// processUnit('SUPP');
-//    if (typeof unit === 'number') {
-
-// alternative
-// function createStudent(student: { id: number; name: string }): void {
-//    console.log(`Welcome to the course ${student.name.toUpperCase()}!!!`);
-// }
-
-// createStudent({ id: 1, name: 'john' });
-
-const processData = function (
-   input: string | number,
-   config: { reverse: boolean }
-): string | number | undefined {
-   if (typeof input === 'number') return input * 2;
-   if (typeof input === 'string' && config.reverse !== true)
-      return input.toUpperCase();
-   if (config.reverse === true && typeof input === 'string')
-      return input.split('').reverse().join('');
+type Book = {
+   title: string;
+   author: string;
+   year: number;
+   genre: string;
+   price: number;
 };
-
-console.log(processData('shohan', { reverse: false }));
-console.log(processData('Rakib', { reverse: true }));
+const book1: Book = {
+   title: 'The Great Gatsby',
+   author: 'F. Scott Fitzgerald',
+   year: 1925,
+   genre: 'Fiction',
+   price: 10,
+};
+const book2: Book = {
+   title: 'The Catcher in the Rye',
+   author: 'J.D. Salinger',
+   year: 1951,
+   genre: 'Fiction',
+   price: 8,
+};
+const book3: Book & { other: string } = {
+   title: 'To Kill a Mockingbird',
+   author: 'Harper Lee',
+   year: 1960,
+   genre: 'Fiction',
+   price: 12,
+   other: 'abcd...',
+};
+console.log(book1, book2, book3);
