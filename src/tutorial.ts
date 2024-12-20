@@ -1,30 +1,32 @@
-type Book = {
-   title: string;
-   author: string;
-   year: number;
-   genre: string;
-   price: number;
-};
-const book1: Book = {
-   title: 'The Great Gatsby',
-   author: 'F. Scott Fitzgerald',
-   year: 1925,
-   genre: 'Fiction',
-   price: 10,
-};
-const book2: Book = {
-   title: 'The Catcher in the Rye',
-   author: 'J.D. Salinger',
-   year: 1951,
-   genre: 'Fiction',
-   price: 8,
-};
-const book3: Book & { other: string } = {
-   title: 'To Kill a Mockingbird',
-   author: 'Harper Lee',
-   year: 1960,
-   genre: 'Fiction',
-   price: 12,
-   other: 'abcd...',
-};
-console.log(book1, book2, book3);
+interface Person {
+  name: string;
+}
+
+interface Dogowner extends Person {
+  dogName: string;
+}
+
+interface Manager extends Person {
+  managePeople(): void;
+  delgateTasks(): void;
+}
+
+function getEmployee() {
+  const randomValue = Math.random();
+  if (randomValue < 0.33) {
+    return { name: 'John', dogName: 'Buddy' };
+  } else if (randomValue < 0.66) {
+    return {
+      name: 'John',
+      managePeople: () => console.log('Managing people'),
+    };
+  } else {
+    return {
+      name: 'John',
+      delgateTasks: () => console.log('Delegating tasks'),
+    };
+  }
+}
+
+const employee: Person | Dogowner | Manager = getEmployee();
+console.log(employee);
